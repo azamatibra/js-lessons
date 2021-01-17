@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  padding: 30px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.books__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.books__title {
+  color: #bb157c;
+}
+.books__show {
+  font-weight: 500;
+  color: #474343;
+}
+.books__wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.books__inner {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  color: #bb157c;
+}
+
+.book {
+  min-width: 220px;
+  max-width: 300px;
+  overflow: hidden;
+}
+.book__photo {
+  position: relative;
+  max-width: 150px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.book__img {
+  position: relative;
+  z-index: 2;
+  min-height: 200px;
+  max-height: 200px;
+}
+.book__circle {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+}
+.book__title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.book__author {
+  color: #000;
+  margin-bottom: 20px;
+}
+.book__price {
+  display: inline-block;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.book__compare {
+  padding: 10px 15px;
+  display: block;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #2a1985;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=style.css.map */
