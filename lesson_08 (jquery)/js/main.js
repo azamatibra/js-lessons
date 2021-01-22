@@ -1,4 +1,3 @@
-
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -7,6 +6,8 @@ function colorGenerate() {
   return "#000000".slice(0, -color.length) + color;
 }
 
+let book = $(".book__photo");
+let size = 100;
 let number = randomNumber(100, 200);
 let bookCircle = $(".book__circle");
 for (let i = 0; i < bookCircle.length; i++) {
@@ -14,11 +15,10 @@ for (let i = 0; i < bookCircle.length; i++) {
     background: colorGenerate(),
     display: "inline-block",
     "border-radius": "50%",
+    top: (randomNumber(0, book.height()) - size),
+    left: (randomNumber(0, book.width()) - size),
     width: number,
     height: number,
-    top: randomNumber(1, 100) + "%",
-    left: randomNumber(1, 100) + "%",
   });
 }
-
-
+console.log(book.height);
