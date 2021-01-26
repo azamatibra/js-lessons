@@ -1,126 +1,126 @@
 // 1
-$(() => {
-  let time = $(".time__text");
-  let start = $(".time__start");
-  let timeMinute = $(".time__minute");
-  let timeSec = $(".time__sec");
-  let timePause = $(".time__pause");
-  let timeHour = $(".time__hour");
-  let timeReset = $(".time__reset");
-  let timeCircle = $(".time__circle");
-  let lastCircle = $(".time__last-circle");
-  let circleWrap = $(".circle__wrap");
-  let timer;
-  let hour = 0;
-  let sec = 0;
-  let minute = 0;
-  let circleInfo = [];
+// $(() => {
+//   let time = $(".time__text");
+//   let start = $(".time__start");
+//   let timeMinute = $(".time__minute");
+//   let timeSec = $(".time__sec");
+//   let timePause = $(".time__pause");
+//   let timeHour = $(".time__hour");
+//   let timeReset = $(".time__reset");
+//   let timeCircle = $(".time__circle");
+//   let lastCircle = $(".time__last-circle");
+//   let circleWrap = $(".circle__wrap");
+//   let timer;
+//   let hour = 0;
+//   let sec = 0;
+//   let minute = 0;
+//   let circleInfo = [];
 
-  start.on("click", () => {
-    timer = setInterval(startSec, 1000);
-  });
-  timePause.on("click", () => {
-    timer = clearInterval(timer);
-  });
-  timeReset.on("click", () => {
-    reset();
-  });
-  timeCircle.on("click", () => {
-    circle();
-  });
-  lastCircle.on("click", () => {
-    setCircleToDom();
-  });
+//   start.on("click", () => {
+//     timer = setInterval(startSec, 1000);
+//   });
+//   timePause.on("click", () => {
+//     timer = clearInterval(timer);
+//   });
+//   timeReset.on("click", () => {
+//     reset();
+//   });
+//   timeCircle.on("click", () => {
+//     circle();
+//   });
+//   lastCircle.on("click", () => {
+//     setCircleToDom();
+//   });
 
-  function startSec() {
-    if (sec < 60) {
-      sec++;
-      sec = String(sec);
-      $(timeSec).text(sec);
-      if (sec.length == 1) {
-        $(timeSec).text(0 + sec);
-      }
-    }
-    if (sec == 60) {
-      startMinute();
-    }
-  }
-  function startMinute() {
-    if (minute < 60) {
-      compareMinute();
-      function compareMinute() {
-        minute++;
-        sec = 0;
-        minute = String(minute);
-        $(timeMinute).text(" " + minute);
-        if (minute.length == 1) {
-          $(timeMinute).text("0" + minute);
-        }
-      }
-    }
+//   function startSec() {
+//     if (sec < 60) {
+//       sec++;
+//       sec = String(sec);
+//       $(timeSec).text(sec);
+//       if (sec.length == 1) {
+//         $(timeSec).text(0 + sec);
+//       }
+//     }
+//     if (sec == 60) {
+//       startMinute();
+//     }
+//   }
+//   function startMinute() {
+//     if (minute < 60) {
+//       compareMinute();
+//       function compareMinute() {
+//         minute++;
+//         sec = 0;
+//         minute = String(minute);
+//         $(timeMinute).text(" " + minute);
+//         if (minute.length == 1) {
+//           $(timeMinute).text("0" + minute);
+//         }
+//       }
+//     }
 
-    if (minute == 60) {
-      startHour();
-      compareMinute();
-    }
-  }
-  function startHour() {
-    if (hour < 24) {
-      minute = 0;
-      hour++;
-      $(timeHour).css({ display: "inline-block" });
-      timeHour.text(hour + " : ");
-      hour = String(hour);
-      if (hour.length == 1) {
-        timeHour.text("0" + hour + " : ");
-      }
-      startSec();
-    }
-  }
-  function circle() {
-    let box = $("<div class='circle__box'></div>");
-    let text = $('<span class="circle__text">');
-    text.text("Время круга - " + time.text());
-    circleInfo.push(text.text());
-    let circleInfoStr = JSON.stringify(circleInfo);
-    localStorage.setItem("circleInfo", circleInfoStr);
-    box.append(text);
-    circleWrap.append(box);
-    workIcon(box);
-  }
-  function workIcon(box) {
-    let icon = $('<img class="circle__icon" src="img/cancel.png">');
-    box.append(icon);
-    removeBox(icon, box);
-  }
-  function setCircleToDom() {
-    circleInfo = JSON.parse(localStorage.getItem("circleInfo"));
-    for (const item of circleInfo) {
-      let box = $("<div class='circle__box'></div>");
-      let circle = $("<span class='circle__text'>").text(item);
-      box.append(circle);
-      circleWrap.append(box);
-      workIcon(box);
-    }
-  }
-  function removeBox(icon, box) {
-    $(icon).on("click", () => {
-      box.remove();
-      localStorage.removeItem(key);
-    });
-  }
-  function reset() {
-    hour = 0;
-    minute = 0;
-    sec = 0;
-    timer = clearInterval(timer);
-    timeMinute.text("00");
-    timeSec.text("00");
-    timeHour.text("00 : ");
-    $(circleWrap).text("");
-    localStorage.removeItem("circleInfo");
-  }
-});
+//     if (minute == 60) {
+//       startHour();
+//       compareMinute();
+//     }
+//   }
+//   function startHour() {
+//     if (hour < 24) {
+//       minute = 0;
+//       hour++;
+//       $(timeHour).css({ display: "inline-block" });
+//       timeHour.text(hour + " : ");
+//       hour = String(hour);
+//       if (hour.length == 1) {
+//         timeHour.text("0" + hour + " : ");
+//       }
+//       startSec();
+//     }
+//   }
+//   function circle() {
+//     let box = $("<div class='circle__box'></div>");
+//     let text = $('<span class="circle__text">');
+//     text.text("Время круга - " + time.text());
+//     circleInfo.push(text.text());
+//     let circleInfoStr = JSON.stringify(circleInfo);
+//     localStorage.setItem("circleInfo", circleInfoStr);
+//     box.append(text);
+//     circleWrap.append(box);
+//     workIcon(box);
+//   }
+//   function workIcon(box) {
+//     let icon = $('<img class="circle__icon" src="img/cancel.png">');
+//     box.append(icon);
+//     removeBox(icon, box);
+//   }
+//   function setCircleToDom() {
+//     circleInfo = JSON.parse(localStorage.getItem("circleInfo"));
+//     for (const item of circleInfo) {
+//       let box = $("<div class='circle__box'></div>");
+//       let circle = $("<span class='circle__text'>").text(item);
+//       box.append(circle);
+//       circleWrap.append(box);
+//       workIcon(box);
+//     }
+//   }
+//   function removeBox(icon, box) {
+//     $(icon).on("click", () => {
+//       box.remove();
+//       localStorage.removeItem();
+//     });
+//   }
+//   function reset() {
+//     hour = 0;
+//     minute = 0;
+//     sec = 0;
+//     timer = clearInterval(timer);
+//     timeMinute.text("00");
+//     timeSec.text("00");
+//     timeHour.text("00 : ");
+//     $(circleWrap).text("");
+//     localStorage.removeItem("circleInfo");
+//   }
+// });
 
 // lesson
 
