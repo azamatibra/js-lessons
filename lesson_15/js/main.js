@@ -45,6 +45,7 @@ $(function () {
       dateReverse = $(".add__date").val().split("-"),
       desc = $(".add__text").val(),
       number = 1;
+
     let date = ([dateReverse[0], dateReverse[1], dateReverse[2]] = [
       dateReverse[2],
       dateReverse[1],
@@ -70,11 +71,7 @@ $(function () {
     e.preventDefault();
     createBox(desc, number, date, country);
     removeData();
-
-    console.log(arrCountry );
   });
-  console.log(arrCountry);
-
   if (dataNumber != "") {
     getData();
   }
@@ -132,10 +129,10 @@ $(function () {
     let placeRemove = $(".place__remove");
     placeRemove.on("click", function (e) {
       $(this).closest(".place").remove();
-      let arrCountry = JSON.parse(localStorage.getItem("country"));
-      let arrDate = JSON.parse(localStorage.getItem("date"));
-      let arrDesc = JSON.parse(localStorage.getItem("desc"));
-      let arrNumber = JSON.parse(localStorage.getItem("number"));
+      arrCountry = JSON.parse(localStorage.getItem("country"));
+      arrDate = JSON.parse(localStorage.getItem("date"));
+      arrDesc = JSON.parse(localStorage.getItem("desc"));
+      arrNumber = JSON.parse(localStorage.getItem("number"));
       let placeCountry = $(this)
         .siblings(".place__inner")
         .find(".place__stay")
@@ -162,7 +159,6 @@ $(function () {
       compareValue(arrDesc, placeDesc);
       compareValue(arrNumber, placeNumber);
 
-      // compareValue(arrNumber, placeNumber);
       localStorage.setItem("country", JSON.stringify(arrCountry));
       localStorage.setItem("date", JSON.stringify(arrDate));
       localStorage.setItem("desc", JSON.stringify(arrDesc));
@@ -186,6 +182,5 @@ $(function () {
     arrDate = [];
     $(".place").remove();
     localStorage.clear();
-    console.log(dataCountry);
   });
 });
