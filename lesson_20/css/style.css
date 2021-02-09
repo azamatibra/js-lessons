@@ -1,15 +1,22 @@
+a:hover {
+  text-decoration: none;
+}
+
 .container__custom {
   padding: 20px 0;
 }
 
 .form {
+  display: flex;
   margin-bottom: 20px;
 }
 
+.country__title {
+  border-radius: 10px;
+}
 .country__title-custom {
   padding: 8px;
   margin-bottom: 20px;
-  background: #60767a;
   color: #fff;
 }
 .country__text {
@@ -21,8 +28,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px 15px;
-  background: #d8d4d4;
   margin-bottom: 15px;
+  border-radius: 7px;
+  text-decoration: none;
+}
+.country__name {
+  color: #000;
 }
 .country__flag {
   max-width: 50px;
