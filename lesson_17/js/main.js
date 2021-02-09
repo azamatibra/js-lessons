@@ -1,6 +1,13 @@
 class Hamburger {
+  #PRICE = {
+    price: 0,
+    calorieContent: 0,
+    cheese: 50,
+    salad: 5,
+    potato: 25,
+  };
   constructor(type, filling) {
-    this.price = 0;
+    this.#PRICE.price = 0;
     this.calorieContent = 0;
     this.cheese = 50;
     this.salad = 5;
@@ -44,12 +51,3 @@ let person = new Hamburger("маленький", "картофель");
 console.log(person);
 person.getPrice();
 person.getCalories();
-
-// class CoffeeMachine {
-//   constructor(power) {
-//     this.waterAmount = 0;
-//     console.log(`Создана кофемашина с мощьностью: ${power} ватт`);
-//   }
-// }
-// const coffeeMachine = new CoffeeMachine(500);
-// coffeeMachine.waterAmount = 200;
