@@ -1,0 +1,64 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Montserrat', sans-serif
+.wrapper
+  padding: 20px 0
+.pokemon
+  &__heading
+    text-align: center
+    margin-bottom: 30px
+  &__data
+    display: flex
+    margin-bottom: 60px
+  &__info
+    padding: 15px
+    width: 100%
+    max-width: 200px
+    background: #e6e6e6
+    margin-right: 40px
+    -webkit-box-shadow: 3px 3px 5px 5px rgba(168,168,168,0.69)
+    box-shadow: 3px 3px 5px 5px rgba(168,168,168,0.69)
+  &__inner
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    width: 100%
+    align-items: start
+  &__title
+    padding: 10px 0
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    max-width: 150px
+    background: #e6e6e6
+    font-weight: 600
+    margin: 8px 0
+    transition: .2s
+    cursor: pointer
+    &:hover
+      color: #fff
+      background: #e43e21
+  &__img
+    display: flex
+    align-items: center
+    justify-content: center
+  &__group
+    display: flex
+    justify-content: space-between
+    border-bottom: 1px dotted #4f4b4b7b
+    margin-bottom: 8px
+    &-label
+      font-weight: 600
+  &__pagination
+    display: flex
+    justify-content: space-between
+  &__arrow
+    padding: 5px 10px 
+    color: #fff
+    font-weight: 600
+    border: none
+    border-radius: 3px
+    background: #e43e21
