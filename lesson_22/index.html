@@ -22,12 +22,24 @@
       <div class="container">
         <div class="pokemon">
           <div class="pokemon__wrap">
-            <h2 class="pokemon__heading">Это что за покемон?</h2>
-            <div class="pokemon__data">
+            <div class="pokemon__inner">
+              <h2 class="pokemon__heading">Это что за покемон?</h2>
+              <form class="pokemon__form-search" action="#">
+                <input class="input-group-text pokemon__search" type="text" placeholder="Введите покемона: ">
+                <button class="btn btn-danger">Искать</button>
+              </form>
             </div>
+            <div class="pokemon__data"></div>
             <div class="pokemon__pagination">
               <button class="pokemon__arrow pokemon__prev">Предыдущие</button>
+              <div class="pokemon__page">
+                <a class="pokemon__page-prev pokemon__page-link">Первая</a>
+                <span class="pokemon__page-current">Страница <span id="pokemon-current">1</span></span>
+                <a class="pokemon__page-next pokemon__page-link">Последняя</a>
+              </div>
+                
               <button class="pokemon__arrow pokemon__next">Следующие</button>
+              </div>
             </div>
           </div>
         </div>
